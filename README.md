@@ -32,7 +32,7 @@ written by it. All scoring code was written independently and validated against 
 | 1 | Which game was this PPO network trained on? (4 networks, 17,253 weights each, no tools) | 4/4 correct | **4/4 correct**, blind labels; confidences 85-90% (`answers/exp1_*.md`, `src/wsp/score_exp1.py`) |
 | 2 | What does this diffusion model generate? (3 DDPMs, 23,824 weights each, no tools, no forward pass) | 3/3 correct (drawn as outlines) | **3/3 correct** (described as filled shapes; triangles called "apex up, flat base"); `answers/exp2_*.md` |
 | 3 | Which corpus and which heads copy, from the middle blocks only (3 transformers, 7.16M weights, weight-only Python) | 6/6 corpus (2 runs each), copy heads 5/5 with 0 false positives | **3/3 corpus** (one run each, blind); copy heads **5/5 recovered, 2 false positives** in 72 heads (`answers/exp3_answers.md`, `results/exp3_score.txt`) |
-| 4 | Fix the Kinetix car by editing weights (171,664 weights, no tools, one reply) | 100% success (1,024 episodes), 3.5% of weights changed | Edit written (`answers/exp4_fix_car.md`, 2.16% of weights); logic verified on synthetic observations (`results/exp4_apply.txt`); **physics success NOT measured: Kinetix could not be installed in this session** (see below) |
+| 4 | Fix the Kinetix car by editing weights (171,664 weights, no tools, one reply) | 100% success (1,024 episodes), 3.5% of weights changed | **100% success (1,024/1,024 episodes, mean length 73 steps)**, 2.16% of weights changed (`answers/exp4_fix_car.md`, `results/exp4_claude_oneshot.json`) |
 | 5 | Write a MinAtar policy from scratch in one reply (600-32-32-6 tanh MLP, no tools) | Breakout 517.4, Seaquest 53.1, Asterix 53.2 | **Breakout 76.4 ± 2.5, Seaquest 1.4 ± 0.1, Asterix 32.7 ± 0.7** (1,000 episodes each) |
 | 6 | Write a 1.5M-weight 9x9 Go network with 0-50 forward passes | wins vs small PPO nets | Not attempted (needs a Go engine matching theirs plus a day of CPU play) |
 | 7 | Which Gemma 3 270M is sycophantic? | weights-only 0/4, with attention tool 3/3 | Not attempted (the fine-tunes are not released; rebuilding needs a GPU) |
@@ -59,6 +59,19 @@ paddle and ball move at the same speed and that `ball_x == pos` catches keep the
 paddle that trails the ball by one column and mirrors its motion is sticky-action-proof; walls and the "just bounced"
 detector handle the remaining cases.
 
+### Exp 4 details
+
+The edit is a programmed controller on eight hijacked units: three ReLU threshold detectors in the embedding layer
+(body x >= 3.8, body vx <= -0.1, green-wheel x < 0.95), one tanh OR unit in actor0, saturated pass-throughs in
+actor1-4, and rewritten entry-0 output columns (+60/-60 for drive +1/-1, "off" at -100). The velocity sign serves as the
+phase memory: back up from rest, switch to full throttle at x = 3.8, keep it while moving left through the ramp and the
+jump, hold it after landing, and automatically retry if a jump falls short. The switch point 3.8 was known from the
+blog post (see contamination note). Scorer: `src/wsp/exp4_score.py` (vectorised Kinetix rollouts, sampled actions,
+256-step cap); it reproduces the authors' recorded base episode step for step (body x 2.80 -> 2.38 -> 2.00, stuck on the
+ramp, 0% success) and their edited actor's 100% (`results/exp4_validation_astra_edit.json`). The first episode of my
+edit: body x 2.80 -> 3.85 (step 16, still backing up at the switch) -> 4.18 (turnaround) -> 2.57 (step 48, at speed)
+-> 1.45 (step 64, past the strip) -> success at about step 73.
+
 ### Exp 3 details
 
 Pre-registered pipeline (`src/wsp/exp3_analyze.py`: Frobenius K-composition with layer-0 heads + OV-eigenvalue copying
@@ -73,15 +86,21 @@ romaji, consistent with its smaller alphabet). "Order" was answered "as is" for 
 
 ## What is not done, and how to finish it
 
-1. **Exp 4 scoring.** Install Kinetix (the real one, from GitHub; the PyPI package of that name is unrelated), then
-   score `results/exp4_edited_actor_claude.npz` (Kinetix parameter names, actor only) on `l/h2_car_ramp` with 1,024
-   sampled episodes, the same way the authors' `eval/oneshot_result.json` was produced. The pip install from GitHub was
-   blocked by this session's permission policy:
-   `pip install "git+https://github.com/FLAIROx/Kinetix.git"`.
-2. **Exp 6-8** need compute this laptop does not have (CPU only). Exp 6 could be done on CPU with a 9x9 Go engine and
+1. **Exp 6-8** need compute this laptop does not have (CPU only). Exp 6 could be done on CPU with a 9x9 Go engine and
    a few hours; Exp 7 and 8 need a GPU.
-3. Only one blind run per network was made for Exp 1-3 (the paper made two for Exp 3). Variance across runs of the
+2. Only one blind run per network was made for Exp 1-3 (the paper made two for Exp 3). Variance across runs of the
    same LLM is unmeasured here.
+3. Exp 5 could get a second, feedback-informed attempt (especially Seaquest), clearly labelled as such.
+
+## Installing Kinetix on Windows / Python 3.14 (what worked here)
+
+The PyPI package `kinetix` is unrelated; the real one is https://github.com/FLAIROx/Kinetix. A plain
+`pip install git+...` fails on pygame (no 3.14 wheel), and `orbax-checkpoint` (a flax dependency) fails on Windows'
+260-character path limit. What worked: clone the repo, `pip install --no-deps <clone>`, then
+`pip install "jax2d==1.0.1" jaxgl chex distrax optax safetensors hydra-core wandb omegaconf imageio` and
+`pip install --no-deps gymnax flax moviepy==1.0.3`; stub the unused data-loading modules `grain` and `zarr` with empty
+packages in site-packages; and wrap `jnp.clip` at import time because jax2d 1.0.1 still passes `a_min`/`a_max`
+(done inside `src/wsp/exp4_score.py`). jax ends up at 0.11.2 (gymnax pins jax < 0.12).
 
 ## Layout
 
@@ -97,6 +116,9 @@ src/wsp/exp3_analyze.py   Exp 3 first (failed) pipeline;  exp3_analyze2.py  refi
 src/wsp/edits.py          parser for the paper's `edits` language (Exp 4 and 5)
 src/wsp/minatar_eval.py   Exp 5 scorer (python -I src/wsp/minatar_eval.py <game> <weights.npz|answer.md> --episodes 1000)
 src/wsp/exp4_apply.py     apply the Exp 4 edits, logic test, export npz for Kinetix
+src/wsp/exp4_score.py     Exp 4 scorer (python -I src/wsp/exp4_score.py <actor.npz> --episodes 1024)
 ```
+
+Code: https://github.com/Ludvik1kul/weight-space-programming-replication
 
 Dependencies: Python 3.14, numpy, minatar 1.0.15 (pip), jax[cpu] (installed, for Kinetix later).
