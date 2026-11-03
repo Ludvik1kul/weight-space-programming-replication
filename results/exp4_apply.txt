@@ -1,0 +1,33 @@
+edit report: {'statements': 32, 'applied': 32, 'entries_written': 3727}
+changed 3707 of 171664 actor weights (2.16%)
+
+controller logic on synthetic observations (entry-0 logits [off, +1, -1] and argmax):
+  x=2.80 vx=+0.0 green_x=2.54 other|obs|<=0.0: [-100.  -60.   60.] argmax=2   start: back up -> expect -1 (idx 2)
+  x=2.80 vx=+0.0 green_x=2.54 other|obs|<=1.0: [-100.  -60.   60.] argmax=2   
+  x=2.80 vx=+0.0 green_x=2.54 other|obs|<=5.0: [-100.  -60.   60.] argmax=2   
+  x=3.50 vx=+1.5 green_x=3.20 other|obs|<=0.0: [-100.  -60.   60.] argmax=2   backing up fast, x<3.8 -> -1 (idx 2)
+  x=3.50 vx=+1.5 green_x=3.20 other|obs|<=1.0: [-100.  -60.   60.] argmax=2   
+  x=3.50 vx=+1.5 green_x=3.20 other|obs|<=5.0: [-100.  -60.   60.] argmax=2   
+  x=3.85 vx=+1.0 green_x=3.60 other|obs|<=0.0: [-100.   60.  -60.] argmax=1   x>=3.8 -> +1 (idx 1)
+  x=3.85 vx=+1.0 green_x=3.60 other|obs|<=1.0: [-100.   60.  -60.] argmax=1   
+  x=3.85 vx=+1.0 green_x=3.60 other|obs|<=5.0: [-100.   60.  -60.] argmax=1   
+  x=4.30 vx=-0.5 green_x=4.00 other|obs|<=0.0: [-100.   60.  -60.] argmax=1   returning, vx<0 -> +1 (idx 1)
+  x=4.30 vx=-0.5 green_x=4.00 other|obs|<=1.0: [-100.   60.  -60.] argmax=1   
+  x=4.30 vx=-0.5 green_x=4.00 other|obs|<=5.0: [-100.   60.  -60.] argmax=1   
+  x=2.20 vx=-2.5 green_x=1.90 other|obs|<=0.0: [-100.   60.  -60.] argmax=1   on the ramp at speed -> +1 (idx 1)
+  x=2.20 vx=-2.5 green_x=1.90 other|obs|<=1.0: [-100.   60.  -60.] argmax=1   
+  x=2.20 vx=-2.5 green_x=1.90 other|obs|<=5.0: [-100.   60.  -60.] argmax=1   
+  x=0.80 vx=-0.3 green_x=0.60 other|obs|<=0.0: [-100.   60.  -60.] argmax=1   landed near box -> +1 (idx 1)
+  x=0.80 vx=-0.3 green_x=0.60 other|obs|<=1.0: [-100.   60.  -60.] argmax=1   
+  x=0.80 vx=-0.3 green_x=0.60 other|obs|<=5.0: [-100.   60.  -60.] argmax=1   
+  x=0.70 vx=+0.4 green_x=0.45 other|obs|<=0.0: [-100.   60.  -60.] argmax=1   pushing box, rolling back but wheel<0.95 -> +1 (idx 1)
+  x=0.70 vx=+0.4 green_x=0.45 other|obs|<=1.0: [-100.   60.  -60.] argmax=1   
+  x=0.70 vx=+0.4 green_x=0.45 other|obs|<=5.0: [-100.   60.  -60.] argmax=1   
+  x=2.00 vx=+0.0 green_x=1.75 other|obs|<=0.0: [-100.  -60.   60.] argmax=2   stalled on ramp as in the record -> -1 (idx 2): retry
+  x=2.00 vx=+0.0 green_x=1.75 other|obs|<=1.0: [-100.  -60.   60.] argmax=2   
+  x=2.00 vx=+0.0 green_x=1.75 other|obs|<=5.0: [-100.  -60.   60.] argmax=2   
+  x=1.60 vx=+0.3 green_x=1.35 other|obs|<=0.0: [-100.  -60.   60.] argmax=2   rolled back off ramp, wheel>0.95 -> -1 (idx 2)
+  x=1.60 vx=+0.3 green_x=1.35 other|obs|<=1.0: [-100.  -60.   60.] argmax=2   
+  x=1.60 vx=+0.3 green_x=1.35 other|obs|<=5.0: [-100.  -60.   60.] argmax=2   
+
+saved results/exp4_edited_actor_claude.npz (Kinetix parameter names)

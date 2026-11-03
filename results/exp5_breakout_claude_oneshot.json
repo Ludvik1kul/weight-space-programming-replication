@@ -1,0 +1,10 @@
+{
+ "mean": 76.38,
+ "se": 2.4639063363761284,
+ "episodes": 1000,
+ "max": 634.0,
+ "mean_length": 1201.78,
+ "seconds": 12.4,
+ "game": "breakout",
+ "weights": "answers/exp5_breakout.md"
+}

@@ -1,0 +1,5 @@
+# blinded copies of the authors' prompts/networks (regenerate with src/wsp/blind.py; keys stay private)
+blind/
+__pycache__/
+*.pyc
+*.log

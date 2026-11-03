@@ -1,0 +1,13 @@
+label -> truth: {'B': 'english', 'C': 'python', 'A': 'romaji'}
+
+label A: truth corpus = romaji; Claude said romaji -> CORRECT
+  Claude copy heads: ['2.0', '3.3']  with induct scores [0.0, 0.22]
+  true copy heads (induct > 0.2): [('L3H3', 0.22)]
+
+label B: truth corpus = english; Claude said english -> CORRECT
+  Claude copy heads: ['1.4', '3.1']  with induct scores [0.0, 0.524]
+  true copy heads (induct > 0.2): [('L3H1', 0.524)]
+
+label C: truth corpus = python; Claude said python -> CORRECT
+  Claude copy heads: ['2.1', '3.1', '3.5']  with induct scores [0.245, 0.269, 0.546]
+  true copy heads (induct > 0.2): [('L2H1', 0.245), ('L3H1', 0.269), ('L3H5', 0.546)]

@@ -1,0 +1,10 @@
+{
+ "mean": 501.894,
+ "se": 7.764640262266012,
+ "episodes": 1000,
+ "max": 807.0,
+ "mean_length": 7157.386,
+ "seconds": 35.6,
+ "game": "breakout",
+ "weights": "C:/Users/A2610206/wsp_ext/lm_understand-logs/exp5_write_from_scratch/networks/breakout/hand.npz"
+}

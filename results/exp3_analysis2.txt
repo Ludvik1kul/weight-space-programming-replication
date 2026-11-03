@@ -1,0 +1,126 @@
+
+########## network A ##########
+matching score over 216 pairs: mean +0.00642 sd 0.01662
+
+head    best partner   T        z      2nd best         call
+L1H0    L0H5        +0.0439   +2.3   L0H2 +0.0427    unclear
+L1H1    L0H5        +0.0232   +1.0   L0H2 +0.0198    unclear
+L1H2    L0H5        +0.0466   +2.4   L0H4 +0.0327    unclear
+L1H3    L0H5        +0.0459   +2.4   L0H2 +0.0353    unclear
+L1H4    L0H5        +0.0357   +1.8   L0H2 +0.0260    unclear
+L1H5    L0H5        +0.0308   +1.5   L0H2 +0.0228    unclear
+L2H0    L0H5        +0.0677   +3.7   L0H2 +0.0561    copy
+L2H1    L0H5        +0.0438   +2.2   L0H2 +0.0278    unclear
+L2H2    L0H5        +0.0453   +2.3   L0H2 +0.0348    unclear
+L2H3    L0H5        +0.0261   +1.2   L0H2 +0.0245    unclear
+L2H4    L0H5        +0.0504   +2.6   L0H2 +0.0405    unclear
+L2H5    L0H5        +0.0467   +2.4   L0H2 +0.0322    unclear
+L3H0    L0H5        +0.0140   +0.5   L0H2 +0.0090    unclear
+L3H1    L0H5        +0.0163   +0.6   L0H2 +0.0123    unclear
+L3H2    L0H2        +0.0121   +0.3   L0H1 +0.0071    unclear
+L3H3    L0H3        +0.0661   +3.6   L2H5 +0.0485    copy
+L3H4    L2H2        +0.0140   +0.5   L2H4 +0.0123    unclear
+L3H5    L0H5        +0.0138   +0.4   L0H2 +0.0099    unclear
+
+copy heads: ['2.0', '3.3']
+top-10 pairs overall:
+   L2H0 <- L0H5: T=+0.0677 z=+3.7
+   L3H3 <- L0H3: T=+0.0661 z=+3.6
+   L2H0 <- L0H2: T=+0.0561 z=+3.0
+   L2H4 <- L0H5: T=+0.0504 z=+2.6
+   L3H3 <- L2H5: T=+0.0485 z=+2.5
+   L2H5 <- L0H5: T=+0.0467 z=+2.4
+   L1H2 <- L0H5: T=+0.0466 z=+2.4
+   L1H3 <- L0H5: T=+0.0459 z=+2.4
+   L2H2 <- L0H5: T=+0.0453 z=+2.3
+   L1H0 <- L0H5: T=+0.0439 z=+2.3
+bottom-3 pairs:
+   L3H0 <- L2H4: T=-0.0366 z=-2.6
+   L3H0 <- L2H5: T=-0.0196 z=-1.6
+   L3H0 <- L2H2: T=-0.0191 z=-1.5
+last block write spectrum: top-10 singular values [28.91 22.39 21.54 20.94 20.12 19.85 19.18 18.93 18.5  17.69]; dims for 50/80/90% energy: 11 27 79; s1/s20 2.43
+W_proj.3 alone: dims for 50/80/90% energy: 8 17 22; top-5 [28.46 22.21 21.34 20.71 19.94]
+
+########## network B ##########
+matching score over 216 pairs: mean +0.00665 sd 0.02086
+
+head    best partner   T        z      2nd best         call
+L1H0    L0H0        +0.0599   +2.6   L0H4 +0.0396    unclear
+L1H1    L0H4        +0.0614   +2.6   L0H0 +0.0509    unclear
+L1H2    L0H4        +0.0592   +2.5   L0H0 +0.0500    unclear
+L1H3    L0H4        +0.0616   +2.6   L0H0 +0.0565    unclear
+L1H4    L0H4        +0.0761   +3.3   L0H0 +0.0742    copy
+L1H5    L0H4        +0.0551   +2.3   L0H0 +0.0435    unclear
+L2H0    L0H4        +0.0201   +0.6   L0H5 +0.0173    unclear
+L2H1    L0H5        +0.0129   +0.3   L0H4 +0.0122    unclear
+L2H2    L0H4        +0.0352   +1.4   L0H0 +0.0275    unclear
+L2H3    L0H0        +0.0213   +0.7   L0H4 +0.0195    unclear
+L2H4    L0H4        +0.0266   +1.0   L0H0 +0.0262    unclear
+L2H5    L0H0        +0.0238   +0.8   L0H4 +0.0230    unclear
+L3H0    L0H4        +0.0076   +0.0   L0H5 +0.0076    unclear
+L3H1    L0H2        +0.1131   +5.1   L2H1 +0.0811    copy
+L3H2    L0H5        +0.0226   +0.8   L0H0 +0.0153    unclear
+L3H3    L0H5        +0.0149   +0.4   L0H0 +0.0137    unclear
+L3H4    L0H5        +0.0297   +1.1   L0H4 +0.0208    unclear
+L3H5    L2H3        +0.0168   +0.5   L1H0 +0.0121    unclear
+
+copy heads: ['1.4', '3.1']
+top-10 pairs overall:
+   L3H1 <- L0H2: T=+0.1131 z=+5.1
+   L3H1 <- L2H1: T=+0.0811 z=+3.6
+   L1H4 <- L0H4: T=+0.0761 z=+3.3
+   L1H4 <- L0H0: T=+0.0742 z=+3.2
+   L1H3 <- L0H4: T=+0.0616 z=+2.6
+   L1H1 <- L0H4: T=+0.0614 z=+2.6
+   L1H0 <- L0H0: T=+0.0599 z=+2.6
+   L1H2 <- L0H4: T=+0.0592 z=+2.5
+   L1H3 <- L0H0: T=+0.0565 z=+2.4
+   L3H1 <- L1H3: T=+0.0558 z=+2.4
+bottom-3 pairs:
+   L2H0 <- L1H0: T=-0.0266 z=-1.6
+   L2H1 <- L1H4: T=-0.0214 z=-1.3
+   L3H0 <- L1H4: T=-0.0205 z=-1.3
+last block write spectrum: top-10 singular values [26.93 20.91 19.92 19.5  18.86 18.49 18.11 17.89 17.27 17.02]; dims for 50/80/90% energy: 12 29 81; s1/s20 2.18
+W_proj.3 alone: dims for 50/80/90% energy: 9 19 24; top-5 [26.31 20.68 19.7  19.26 18.59]
+
+########## network C ##########
+matching score over 216 pairs: mean +0.00631 sd 0.02365
+
+head    best partner   T        z      2nd best         call
+L1H0    L0H4        +0.0271   +0.9   L0H1 +0.0006    unclear
+L1H1    L0H4        +0.0261   +0.8   L0H5 +0.0145    unclear
+L1H2    L0H4        +0.0262   +0.8   L0H3 +0.0051    unclear
+L1H3    L0H4        +0.0423   +1.5   L0H5 +0.0116    unclear
+L1H4    L0H4        +0.0433   +1.6   L0H5 +0.0083    unclear
+L1H5    L0H5        +0.0129   +0.3   L0H1 +0.0039    unclear
+L2H0    L0H4        +0.0091   +0.1   L0H0 +0.0052    unclear
+L2H1    L0H5        +0.0874   +3.4   L1H3 +0.0561    copy
+L2H2    L0H4        +0.0153   +0.4   L0H0 +0.0068    unclear
+L2H3    L0H4        +0.0343   +1.2   L1H1 +0.0054    unclear
+L2H4    L0H4        +0.0258   +0.8   L0H3 +0.0100    unclear
+L2H5    L0H4        +0.0172   +0.5   L1H2 +0.0095    unclear
+L3H0    L2H2        +0.0236   +0.7   L0H5 +0.0225    unclear
+L3H1    L2H2        +0.1105   +4.4   L0H5 +0.0698    copy
+L3H2    L0H4        +0.0129   +0.3   L0H0 +0.0034    unclear
+L3H3    L2H4        +0.0149   +0.4   L2H3 +0.0105    unclear
+L3H4    L2H4        +0.0104   +0.2   L0H4 +0.0104    unclear
+L3H5    L2H2        +0.1836   +7.5   L0H5 +0.0821    copy
+
+copy heads: ['2.1', '3.1', '3.5']
+top-10 pairs overall:
+   L3H5 <- L2H2: T=+0.1836 z=+7.5
+   L3H1 <- L2H2: T=+0.1105 z=+4.4
+   L2H1 <- L0H5: T=+0.0874 z=+3.4
+   L3H5 <- L0H5: T=+0.0821 z=+3.2
+   L3H1 <- L0H5: T=+0.0698 z=+2.7
+   L3H5 <- L1H3: T=+0.0682 z=+2.6
+   L3H5 <- L1H4: T=+0.0576 z=+2.2
+   L2H1 <- L1H3: T=+0.0561 z=+2.1
+   L3H5 <- L2H3: T=+0.0554 z=+2.1
+   L2H1 <- L1H4: T=+0.0479 z=+1.8
+bottom-3 pairs:
+   L3H5 <- L2H1: T=-0.0602 z=-2.8
+   L2H2 <- L1H2: T=-0.0426 z=-2.1
+   L2H2 <- L1H0: T=-0.0407 z=-2.0
+last block write spectrum: top-10 singular values [28.58 20.47 19.51 19.38 18.96 18.84 18.37 18.03 17.73 16.84]; dims for 50/80/90% energy: 12 28 86; s1/s20 2.25
+W_proj.3 alone: dims for 50/80/90% energy: 10 20 25; top-5 [28.18 20.29 19.29 19.13 18.71]

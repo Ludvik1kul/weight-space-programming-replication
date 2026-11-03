@@ -1,0 +1,10 @@
+{
+ "mean": 32.729,
+ "se": 0.7012612397147916,
+ "episodes": 1000,
+ "max": 140.0,
+ "mean_length": 874.434,
+ "seconds": 7.2,
+ "game": "asterix",
+ "weights": "answers/exp5_asterix.md"
+}

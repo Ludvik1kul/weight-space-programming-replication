@@ -1,0 +1,159 @@
+
+########## network A ##########
+K-composition over all pairs: mean 0.1541 sd 0.1037; Q-composition mean 0.0870 sd 0.0347
+
+head   copyOV   maxKcomp(z, with L0H)   maxQcomp(z, with L0H)   call
+L0H0   -0.126   (layer 0: composition n/a)
+L0H1   +0.116   (layer 0: composition n/a)
+L0H2   +0.075   (layer 0: composition n/a)
+L0H3   -0.419   (layer 0: composition n/a)
+L0H4   -0.136   (layer 0: composition n/a)
+L0H5   +0.190   (layer 0: composition n/a)
+L1H0   -0.802   0.3369 (z=+1.8, L0H2)   0.1396 (z=+1.5, L0H1)   unclear
+L1H1   -0.838   0.3476 (z=+1.9, L0H2)   0.1610 (z=+2.1, L0H1)   unclear
+L1H2   -0.866   0.3490 (z=+1.9, L0H2)   0.1281 (z=+1.2, L0H1)   unclear
+L1H3   -0.887   0.3595 (z=+2.0, L0H2)   0.1619 (z=+2.2, L0H1)   unclear
+L1H4   -0.826   0.3189 (z=+1.6, L0H2)   0.1217 (z=+1.0, L0H1)   unclear
+L1H5   -0.822   0.3472 (z=+1.9, L0H2)   0.1646 (z=+2.2, L0H1)   unclear
+L2H0   -0.542   0.2730 (z=+1.1, L0H2)   0.1614 (z=+2.1, L0H1)   unclear
+L2H1   -0.806   0.1662 (z=+0.1, L0H2)   0.1022 (z=+0.4, L0H1)   unclear
+L2H2   -0.717   0.1921 (z=+0.4, L0H2)   0.1037 (z=+0.5, L0H1)   unclear
+L2H3   -0.735   0.1451 (z=-0.1, L0H5)   0.0774 (z=-0.3, L0H1)   unclear
+L2H4   -0.861   0.2190 (z=+0.6, L0H2)   0.1227 (z=+1.0, L0H1)   unclear
+L2H5   -0.822   0.1724 (z=+0.2, L0H2)   0.0984 (z=+0.3, L0H1)   unclear
+L3H0   -0.836   0.1379 (z=-0.2, L0H5)   0.0720 (z=-0.4, L0H5)   unclear
+L3H1   -0.762   0.1610 (z=+0.1, L0H5)   0.0731 (z=-0.4, L0H5)   unclear
+L3H2   -0.725   0.1724 (z=+0.2, L0H5)   0.0961 (z=+0.3, L0H5)   unclear
+L3H3   -0.702   0.0700 (z=-0.8, L0H3)   0.0646 (z=-0.6, L0H3)   unclear
+L3H4   -0.701   0.0773 (z=-0.7, L0H0)   0.0845 (z=-0.1, L0H0)   unclear
+L3H5   -0.703   0.1664 (z=+0.1, L0H5)   0.0743 (z=-0.4, L0H5)   unclear
+
+copy heads: []  their layer-0 K-composition partners: []
+
+effective rank (participation ratio of singular values):
+  layer 0: W_proj   103.7   W_o    15.3   W_fc    36.5   W_v    31.9   W_q    50.1   W_k    46.2
+  layer 1: W_proj   256.8   W_o   135.3   W_fc    81.5   W_v    78.2   W_q    47.7   W_k    19.2
+  layer 2: W_proj   219.5   W_o   160.8   W_fc   172.3   W_v   162.4   W_q   141.5   W_k    69.0
+  layer 3: W_proj    20.8   W_o    81.3   W_fc   194.5   W_v   133.0   W_q   160.4   W_k   132.4
+
+Frobenius norms per layer (W_q, W_k, W_v, W_o, W_fc, W_proj):
+  layer 0 [np.float64(17.67), np.float64(18.52), np.float64(14.94), np.float64(16.55), np.float64(55.38), np.float64(50.01)]
+  layer 1 [np.float64(38.93), np.float64(34.89), np.float64(28.74), np.float64(28.48), np.float64(80.38), np.float64(77.38)]
+  layer 2 [np.float64(38.9), np.float64(36.75), np.float64(33.18), np.float64(32.43), np.float64(79.83), np.float64(78.05)]
+  layer 3 [np.float64(33.24), np.float64(32.46), np.float64(39.42), np.float64(40.13), np.float64(78.26), np.float64(85.12)]
+
+LayerNorm: mean/std of ln1_w, ln2_w per layer; number of |ln_w| > 2 ('amplified dims'):
+  layer 0: ln1 0.297/0.188 (0)   ln2 0.872/0.338 (0)
+  layer 1: ln1 0.506/0.089 (0)   ln2 1.131/0.174 (0)
+  layer 2: ln1 0.681/0.069 (0)   ln2 1.310/0.115 (0)
+  layer 3: ln1 0.709/0.049 (0)   ln2 1.267/0.089 (0)
+
+last-block MLP write directions: fraction of unit pairs with |cos| > 0.8: 0.00021; max |cos| 0.970; mean top-5 |cos| per unit 0.625
+last block [W_o|W_proj]: dims for 50/80/90/95% energy: 11 27 79 144
+first block [W_o|W_proj]: dims for 50/80/90/95% energy: 44 115 168 218
+
+########## network B ##########
+K-composition over all pairs: mean 0.1552 sd 0.1038; Q-composition mean 0.0768 sd 0.0222
+
+head   copyOV   maxKcomp(z, with L0H)   maxQcomp(z, with L0H)   call
+L0H0   -0.029   (layer 0: composition n/a)
+L0H1   -0.142   (layer 0: composition n/a)
+L0H2   -0.377   (layer 0: composition n/a)
+L0H3   -0.482   (layer 0: composition n/a)
+L0H4   -0.236   (layer 0: composition n/a)
+L0H5   -0.015   (layer 0: composition n/a)
+L1H0   -0.709   0.3706 (z=+2.1, L0H5)   0.1138 (z=+1.7, L0H1)   unclear
+L1H1   -0.803   0.3669 (z=+2.0, L0H5)   0.1113 (z=+1.6, L0H1)   unclear
+L1H2   -0.794   0.3823 (z=+2.2, L0H5)   0.1057 (z=+1.3, L0H1)   unclear
+L1H3   -0.799   0.3890 (z=+2.3, L0H5)   0.1080 (z=+1.4, L0H1)   unclear
+L1H4   -0.860   0.4107 (z=+2.5, L0H5)   0.1095 (z=+1.5, L0H1)   unclear
+L1H5   -0.889   0.3846 (z=+2.2, L0H5)   0.1113 (z=+1.6, L0H1)   unclear
+L2H0   -0.871   0.1786 (z=+0.2, L0H5)   0.0987 (z=+1.0, L0H1)   unclear
+L2H1   -0.796   0.1261 (z=-0.3, L0H5)   0.0663 (z=-0.5, L0H4)   unclear
+L2H2   -0.732   0.2453 (z=+0.9, L0H5)   0.0859 (z=+0.4, L0H4)   unclear
+L2H3   -0.820   0.1696 (z=+0.1, L0H5)   0.1055 (z=+1.3, L0H1)   unclear
+L2H4   -0.812   0.1693 (z=+0.1, L0H5)   0.0994 (z=+1.0, L0H1)   unclear
+L2H5   -0.835   0.1685 (z=+0.1, L0H5)   0.1010 (z=+1.1, L0H1)   unclear
+L3H0   -0.860   0.0807 (z=-0.7, L0H5)   0.0538 (z=-1.0, L0H2)   unclear
+L3H1   -0.783   0.0850 (z=-0.7, L0H2)   0.0650 (z=-0.5, L0H2)   unclear
+L3H2   -0.655   0.1909 (z=+0.3, L0H5)   0.0751 (z=-0.1, L0H5)   unclear
+L3H3   -0.692   0.1811 (z=+0.2, L0H5)   0.0834 (z=+0.3, L0H5)   unclear
+L3H4   -0.650   0.1533 (z=-0.0, L0H5)   0.0668 (z=-0.5, L0H3)   unclear
+L3H5   -0.679   0.0772 (z=-0.8, L0H3)   0.1077 (z=+1.4, L0H3)   unclear
+
+copy heads: []  their layer-0 K-composition partners: []
+
+effective rank (participation ratio of singular values):
+  layer 0: W_proj    67.9   W_o    13.6   W_fc    26.8   W_v    37.6   W_q    25.1   W_k    28.0
+  layer 1: W_proj   272.1   W_o   106.3   W_fc    59.4   W_v    60.5   W_q    36.7   W_k    15.1
+  layer 2: W_proj   222.9   W_o   180.5   W_fc   185.3   W_v   169.9   W_q   144.7   W_k    71.3
+  layer 3: W_proj    23.1   W_o    87.3   W_fc   216.3   W_v   147.0   W_q   152.3   W_k   144.6
+
+Frobenius norms per layer (W_q, W_k, W_v, W_o, W_fc, W_proj):
+  layer 0 [np.float64(32.29), np.float64(30.39), np.float64(14.84), np.float64(16.37), np.float64(46.25), np.float64(39.31)]
+  layer 1 [np.float64(32.31), np.float64(29.25), np.float64(27.35), np.float64(25.92), np.float64(79.13), np.float64(75.71)]
+  layer 2 [np.float64(39.35), np.float64(37.77), np.float64(33.3), np.float64(32.84), np.float64(78.97), np.float64(76.83)]
+  layer 3 [np.float64(32.95), np.float64(32.21), np.float64(39.79), np.float64(40.45), np.float64(77.78), np.float64(82.4)]
+
+LayerNorm: mean/std of ln1_w, ln2_w per layer; number of |ln_w| > 2 ('amplified dims'):
+  layer 0: ln1 0.240/0.244 (0)   ln2 0.801/0.330 (0)
+  layer 1: ln1 0.458/0.102 (0)   ln2 1.043/0.200 (0)
+  layer 2: ln1 0.705/0.075 (0)   ln2 1.312/0.126 (0)
+  layer 3: ln1 0.755/0.054 (0)   ln2 1.278/0.081 (0)
+
+last-block MLP write directions: fraction of unit pairs with |cos| > 0.8: 0.00019; max |cos| 0.946; mean top-5 |cos| per unit 0.592
+last block [W_o|W_proj]: dims for 50/80/90/95% energy: 12 29 81 148
+first block [W_o|W_proj]: dims for 50/80/90/95% energy: 30 78 117 162
+
+########## network C ##########
+K-composition over all pairs: mean 0.1075 sd 0.0857; Q-composition mean 0.0707 sd 0.0233
+
+head   copyOV   maxKcomp(z, with L0H)   maxQcomp(z, with L0H)   call
+L0H0   +0.311   (layer 0: composition n/a)
+L0H1   -0.061   (layer 0: composition n/a)
+L0H2   -0.177   (layer 0: composition n/a)
+L0H3   -0.017   (layer 0: composition n/a)
+L0H4   +0.519   (layer 0: composition n/a)
+L0H5   -0.573   (layer 0: composition n/a)
+L1H0   -0.827   0.2232 (z=+1.3, L0H0)   0.1126 (z=+1.8, L0H0)   unclear
+L1H1   -0.779   0.3449 (z=+2.8, L0H4)   0.1226 (z=+2.2, L0H0)   unclear
+L1H2   -0.821   0.3623 (z=+3.0, L0H4)   0.1101 (z=+1.7, L0H0)   unclear
+L1H3   -0.717   0.3889 (z=+3.3, L0H4)   0.1369 (z=+2.8, L0H0)   copy
+L1H4   -0.726   0.3599 (z=+2.9, L0H4)   0.1269 (z=+2.4, L0H0)   unclear
+L1H5   -0.837   0.2967 (z=+2.2, L0H4)   0.1186 (z=+2.1, L0H0)   unclear
+L2H0   -0.773   0.1494 (z=+0.5, L0H4)   0.0879 (z=+0.7, L0H0)   unclear
+L2H1   -0.813   0.0774 (z=-0.4, L0H5)   0.0775 (z=+0.3, L0H0)   unclear
+L2H2   -0.714   0.1854 (z=+0.9, L0H4)   0.1038 (z=+1.4, L0H0)   unclear
+L2H3   -0.780   0.2107 (z=+1.2, L0H4)   0.1101 (z=+1.7, L0H4)   unclear
+L2H4   -0.851   0.2085 (z=+1.2, L0H4)   0.1187 (z=+2.1, L0H0)   unclear
+L2H5   -0.685   0.1310 (z=+0.3, L0H4)   0.0792 (z=+0.4, L0H0)   unclear
+L3H0   -0.761   0.1045 (z=-0.0, L0H4)   0.0552 (z=-0.7, L0H5)   unclear
+L3H1   -0.813   0.0743 (z=-0.4, L0H4)   0.0586 (z=-0.5, L0H5)   unclear
+L3H2   -0.756   0.1259 (z=+0.2, L0H4)   0.0579 (z=-0.5, L0H2)   unclear
+L3H3   -0.674   0.0746 (z=-0.4, L0H4)   0.0643 (z=-0.3, L0H0)   unclear
+L3H4   -0.586   0.1260 (z=+0.2, L0H4)   0.0657 (z=-0.2, L0H2)   unclear
+L3H5   -0.916   0.0804 (z=-0.3, L0H5)   0.0820 (z=+0.5, L0H5)   unclear
+
+copy heads: ['1.3']  their layer-0 K-composition partners: ['0.4']
+
+effective rank (participation ratio of singular values):
+  layer 0: W_proj    86.4   W_o    36.9   W_fc    36.5   W_v    39.7   W_q    42.8   W_k    39.3
+  layer 1: W_proj   278.5   W_o   110.1   W_fc    57.2   W_v    67.0   W_q    45.0   W_k    23.2
+  layer 2: W_proj   231.7   W_o   182.1   W_fc   187.5   W_v   166.3   W_q   150.0   W_k   102.4
+  layer 3: W_proj    23.7   W_o   109.7   W_fc   215.9   W_v   164.0   W_q   173.1   W_k   173.4
+
+Frobenius norms per layer (W_q, W_k, W_v, W_o, W_fc, W_proj):
+  layer 0 [np.float64(22.7), np.float64(23.21), np.float64(18.2), np.float64(19.6), np.float64(51.65), np.float64(45.81)]
+  layer 1 [np.float64(31.68), np.float64(28.6), np.float64(28.47), np.float64(26.15), np.float64(80.26), np.float64(75.12)]
+  layer 2 [np.float64(37.48), np.float64(36.36), np.float64(34.75), np.float64(34.21), np.float64(79.45), np.float64(77.48)]
+  layer 3 [np.float64(33.94), np.float64(33.22), np.float64(38.94), np.float64(39.02), np.float64(78.19), np.float64(85.09)]
+
+LayerNorm: mean/std of ln1_w, ln2_w per layer; number of |ln_w| > 2 ('amplified dims'):
+  layer 0: ln1 0.268/0.215 (0)   ln2 0.817/0.331 (0)
+  layer 1: ln1 0.475/0.096 (0)   ln2 1.011/0.158 (0)
+  layer 2: ln1 0.734/0.071 (0)   ln2 1.275/0.113 (0)
+  layer 3: ln1 0.769/0.047 (0)   ln2 1.255/0.089 (0)
+
+last-block MLP write directions: fraction of unit pairs with |cos| > 0.8: 0.00017; max |cos| 0.959; mean top-5 |cos| per unit 0.583
+last block [W_o|W_proj]: dims for 50/80/90/95% energy: 12 28 86 155
+first block [W_o|W_proj]: dims for 50/80/90/95% energy: 41 110 162 211

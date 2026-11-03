@@ -1,0 +1,10 @@
+{
+ "mean": 1.361,
+ "se": 0.05709587497305685,
+ "episodes": 1000,
+ "max": 12.0,
+ "mean_length": 295.151,
+ "seconds": 5.3,
+ "game": "seaquest",
+ "weights": "answers/exp5_seaquest.md"
+}
